@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Skill"
+  short_description: "Minimal test skill for smoke checks"
+  default_prompt: "Use $test-skill to validate local skill loading and return a short structured result."

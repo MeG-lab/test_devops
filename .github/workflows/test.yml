@@ -1,0 +1,37 @@
+# CI/CD 工作流 — 代码检查与测试
+name: test
+
+# 触发条件：推送到 main 分支时自动运行
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    # 运行环境：Ubuntu 最新版
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 安装 Node.js 运行环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 安装项目依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # 运行代码风格检查
+      - name: Run linter
+        run: npm run lint
+
+      # 运行单元测试
+      - name: Run tests
+        run: npm test
