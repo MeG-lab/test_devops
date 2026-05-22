@@ -11,6 +11,8 @@ jobs:
   test:
     # 运行环境：Ubuntu 最新版
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       # 检出代码
