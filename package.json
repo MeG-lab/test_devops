@@ -1,0 +1,11 @@
+{
+  "name": "test_devops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo 'lint passed (no linter configured)'",
+    "test": "node -e \"require('./index')\" && echo 'test passed'"
+  },
+  "license": "ISC"
+}
